@@ -1,3 +1,7 @@
+import 'package:alltrails/features/discover/screens/discover.dart';
+import 'package:alltrails/features/home/screens/homepage.dart';
+import 'package:alltrails/features/profile/screens/profile.dart';
+import 'package:alltrails/features/search/screens/LocatioSearch.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,10 +19,10 @@ class _MyAppState extends State<MyApp> {
   int selectedIndex = 0;
 
   final screens = [
-    Center(child: Text("Home")),
-    Center(child: Text("Search")),
-    Center(child: Text("Discover")),
-    Center(child: Text("Profile")),
+    HomePage(),
+    LocationSearch(),
+    Discover(),
+    Profile(),
   ];
 
   @override
