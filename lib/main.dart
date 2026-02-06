@@ -18,12 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int selectedIndex = 0;
 
-  final screens = [
-    HomePage(),
-    LocationSearch(),
-    Discover(),
-    Profile(),
-  ];
+  final screens = [HomePage(), LocationSearch(), Discover(), Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -46,13 +41,17 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: Text(
             'Trails',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.w600,
+              color: Colors.white,
+            ),
           ),
-          backgroundColor: const Color.fromARGB(255, 255, 191, 0),
+          backgroundColor: const Color.fromARGB(255, 5, 128, 66),
           elevation: 0,
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
+          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu, color: Colors.white,)),
           actions: [
-            IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app)),
+            IconButton(onPressed: () {}, icon: Icon(Icons.exit_to_app, color: Colors.white,)),
           ],
         ),
 

@@ -69,6 +69,11 @@ flutter:
     - assets/images/destinations/bwindi.jpg
     - assets/images/destinations/bunyoyi.jpg
     - assets/images/destinations/entebee.jpg
+    - assets/images/destinations/elizabeth2.jpg
+    - assets/images/destinations/murchison2.jpg
+    - assets/images/destinations/murchison_falls.jpg
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -109,10 +114,10 @@ flutter_launcher_icons:
     image_path: "assets/icons/trails-logo.png"
 
 flutter_native_splash:
-  color: "#FFDE21"
+  color: "#3CB371"
   image: "assets/splash/splash.png"
   
   android_12:
     image: "assets/splash/splash.png" 
-    color: "#FFDE21"
-    icon_background_color: "#FFDE21"
+    color: "#3CB371"
+    icon_background_color: "#3CB371"
