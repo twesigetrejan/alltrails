@@ -10,12 +10,14 @@ class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
+
 class _MyAppState extends State<MyApp> {
   int selectedIndex = 0;
 
   final screens = [
     Center(child: Text("Home")),
     Center(child: Text("Search")),
+    Center(child: Text("Discover")),
     Center(child: Text("Profile")),
   ];
 
@@ -23,6 +25,19 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        navigationBarTheme: NavigationBarThemeData(
+          labelTextStyle: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              );
+            }
+            return null;
+          }),
+        ),
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: Text(
@@ -37,10 +52,12 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
 
-        // <-- Body changes with selectedIndex
         body: screens[selectedIndex],
 
         bottomNavigationBar: NavigationBar(
+          backgroundColor: Color.fromARGB(255, 27, 27, 27),
+
+          // indicatorColor: Colors.amber,
           selectedIndex: selectedIndex,
           onDestinationSelected: (index) {
             setState(() {
@@ -50,8 +67,11 @@ class _MyAppState extends State<MyApp> {
           destinations: const [
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
             NavigationDestination(icon: Icon(Icons.search), label: "Search"),
+            NavigationDestination(icon: Icon(Icons.explore), label: "Discover"),
             NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
           ],
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          surfaceTintColor: Colors.transparent,
         ),
       ),
     );
